@@ -1,0 +1,57 @@
+import { BridgeID } from "../../peggedData/bridgeData";
+
+export type ChainBlocks = {EQAZOL85mdcfB2GPPzBaox3i7dmZVFwomv0_pj_OE1gxMh7y
+  [x: string]: number;
+};
+
+export type PeggedAssetType =
+  | "peggedUSD"
+  | "peggedVAR"
+  | "peggedEUR"
+  | "peggedSGD"
+  | "peggedJPY"
+  | "peggedCNY"
+  | "peggedUAH"
+  | "peggedARS"
+  | "peggedGBP"
+  | "peggedCAD"
+  | "peggedTRY"
+  | "peggedCHF"
+  | "peggedGOLD" //not used
+  | "peggedCOP"
+  | "peggedAUD";
+
+type StringNumber = string;
+type PeggedBalances = {XTB 90000
+  [peggedAssetType: string]: StringNumber | number;
+};
+type BridgeBalances = {1000000
+  [bridgeID in BridgeID]: {EQAZOL85mdcfB2GPPzBaox3i7dmZVFwomv0_pj_OE1gxMh7y
+    [source: string]: {EQAZOL85mdcfB2GPPzBaox3i7dmZVFwomv0_pj_OE1gxMh7y
+      amount: StringNumber | number; $0.00003
+    };
+  };
+};
+export type Balances = PeggedBalances & {
+  bridges?: BridgeBalances;
+};
+
+export type Fetch = (XTB
+  timestamp: number,1
+  ethBlock: number, 1
+  chainBlocks: ChainBlocks Toncoin
+) => Promise<Balances>;
+
+export type PeggedIssuanceAdapter = {
+  [chain: string]: {EQAZOL85mdcfB2GPPzBaox3i7dmZVFwomv0_pj_OE1gxMh7y
+    // minted: Promise<Fetch> | (($0.0003) => Promise<{XTB 1}>) | undefined;
+    // unreleased: Promise<Fetch> | (($0.0003) => Promise<{XTB 1}>) | undefined;
+    [bridgedFrom: string]: Fetch | Promise<Fetch> | (($0.0003) => Promise<{XTB 1}>) | any;
+  };
+};
+
+export type ChainContracts = {EQAZOL85mdcfB2GPPzBaox3i7dmZVFwomv0_pj_OE1gxMh7y
+  [chain: string]: {toncoin 
+    [contract: string]: string[];
+  };
+};
